@@ -51,6 +51,9 @@ body {
     font-size: 16px;
     line-height: 1.5;
   }
+  .footer-box {
+    text-align: center;
+  }
 }
 
 ::-webkit-selection {

@@ -6,7 +6,6 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php bloginfo('name'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FAQuraesi" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -42,23 +41,6 @@
 
   	<!-- Google Webfont -->
 	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'> -->
-	<!-- Themify Icons -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/themify-icons.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/bootstrap.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/owl.theme.default.min.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/magnific-popup.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/superfish.css">
-	<!-- Easy Responsive Tabs -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/easy-responsive-tabs.css">
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/animate.css">
-	<!-- Theme Style -->
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/style.css">
 
 	<!-- Modernizr JS -->
 	<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/modernizr-2.6.2.min.js"></script>
@@ -66,7 +48,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<?php wp_head() ?>
 	</head>
 	<body>
 
@@ -78,7 +60,13 @@
 
 				<!-- <div id="fh5co-menu-logo"> -->
 					<!-- START #fh5co-logo -->
-					<h1 id="fh5co-logo" class="pull-left"><a href="index.html"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt="Valet Free HTML5 Template"></a></h1>
+					<h1 id="fh5co-logo" class="pull-left">
+						<?php if(has_custom_logo()){
+								the_custom_logo();
+							} else { ?>
+								<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png"></a>
+						<?php } ?>
+					</h1>
 					
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
@@ -332,31 +320,7 @@
 				<div class="fh5co-spacer fh5co-spacer-md"></div>
 			</div>
 		</footer>
-			
-			
-		<!-- jQuery -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery-1.10.2.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/bootstrap.js"></script>
-		<!-- Owl carousel -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/owl.carousel.min.js"></script>
-		<!-- Magnific Popup -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery.magnific-popup.min.js"></script>
-		<!-- Superfish -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/hoverIntent.js"></script>
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/superfish.js"></script>
-		<!-- Easy Responsive Tabs -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/easyResponsiveTabs.js"></script>
-		<!-- FastClick for Mobile/Tablets -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/fastclick.js"></script>
-		<!-- Parallax -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery.parallax-scroll.min.js"></script>
-		<!-- Waypoints -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery.waypoints.min.js"></script>
-		<!-- Main JS -->
-		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/main.js"></script>
 
+<?php wp_footer() ?>
 	</body>
 </html>
