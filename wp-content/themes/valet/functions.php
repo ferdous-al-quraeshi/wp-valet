@@ -31,3 +31,13 @@ add_action( 'wp_enqueue_scripts', function(){
   wp_enqueue_script('mainJs', get_template_directory_uri().'/js/main.js', array('jq_valet'), '0.0.0', ture);
 
 });
+
+
+// Menu Register
+register_nav_menus( array(
+    'header' => 'Header Menu',
+    'footer' => 'Footer Menu'
+  ) );
+
+
+

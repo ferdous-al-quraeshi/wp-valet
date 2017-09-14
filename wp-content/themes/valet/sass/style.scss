@@ -301,7 +301,7 @@ textarea {
 .sf-menu li.sfHover a,
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
-.sf-menu li.active a {
+.sf-menu li.current-menu-item a {
 	color: $brand-white;
 	// text-shadow: 2px 2px 1px rgba(0, 0, 0, .08);
 }
