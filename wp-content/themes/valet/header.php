@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<?php global $valet; ?>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,6 +49,14 @@
   <!--[if lt IE 9]>
   <script src="js/respond.min.js"></script>
   <![endif]-->
+  <style type="text/css">
+    #fh5co-hero .overlay {
+      background: <?php echo $valet['hero-bg']; ?> !important;
+    }
+
+  </style>
+
+
   <?php wp_head() ?>
   </head>
   <body <?php body_class(); ?>>
@@ -61,7 +70,7 @@
             <?php if(has_custom_logo()){
                 the_custom_logo();
               } else { ?>
-                <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo $valet['header-logo']['url']; ?>" /></a>
             <?php } ?>
           </h1>
           <!-- START #fh5co-menu-wrap -->

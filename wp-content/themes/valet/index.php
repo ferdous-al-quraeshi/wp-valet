@@ -1,65 +1,51 @@
 <?php
+	get_header();
 
-	get_header(); ?>
+	get_template_part('slider');
 
-		<div id="fh5co-hero" style="background-image: url(<?php echo esc_url(get_template_directory_uri()); ?>/images/slide_2.jpg);">
-			<div class="overlay"></div>
-			<a href="#fh5co-main" class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></a>
-			<!-- End fh5co-arrow -->
-			<div class="container">
-				<div class="col-md-12">
-					<div class="fh5co-hero-wrap">
-						<div class="fh5co-hero-intro">
-							<h1 class="to-animate hero-animate-1">Valet Multi-Purpose Free HTML5 Bootstrap Template</h1>
-							<h2 class="to-animate hero-animate-2">Created by <a href="http://freehtml5.co" target="_blank">FREEHTML5.co</a></h2>
-							<p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-md">Sign up</a></p>
-						</div>
-					</div>
-				</div>
-			</div>		
-		</div>
+?>
 
 		<div id="fh5co-main">
 			
 			<div class="fh5co-cards">
 				<div class="container-fluid">
 					<div class="row animate-box">
-						<div class="col-md-12 heading text-center"><h2>Outstanding Products</h2></div>
+						<div class="col-md-12 heading text-center"><h2><?php echo $valet['op-title']; ?></h2></div>
 					</div>
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
 							<a class="fh5co-card" href="#">
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/img_large_1.jpg" alt="Free HTML5 Bootstrap template" class="img-responsive">
+								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-01" class="img-responsive">
 								<div class="fh5co-card-body">
-									<h3>Web Developer</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+									<h3><?php echo $valet['op-header']; ?></h3>
+									<p><?php echo $valet['op-desc']; ?></p>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
 							<a class="fh5co-card" href="#">
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/img_large_2.jpg" alt="Free HTML5 Bootstrap template" class="img-responsive">
+								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-02" alt="Free HTML5 Bootstrap template" class="img-responsive">
 								<div class="fh5co-card-body">
-									<h3>User Experience</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+									<h3><?php echo $valet['op-header']; ?></h3>
+									<p><?php echo $valet['op-desc']; ?></p>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
 							<a class="fh5co-card" href="#">
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/img_large_2.jpg" alt="Free HTML5 Bootstrap template" class="img-responsive">
+								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-03" alt="Free HTML5 Bootstrap template" class="img-responsive">
 								<div class="fh5co-card-body">
-									<h3>Web Designer</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+									<h3><?php echo $valet['op-header']; ?></h3>
+									<p><?php echo $valet['op-desc']; ?></p>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
 							<a class="fh5co-card" href="#">
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/img_large_3.jpg" alt="Free HTML5 Bootstrap template" class="img-responsive">
+								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-04" alt="Free HTML5 Bootstrap template" class="img-responsive">
 								<div class="fh5co-card-body">
-									<h3>Web Analyst</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+									<h3><?php echo $valet['op-header']; ?></h3>
+									<p><?php echo $valet['op-desc']; ?></p>
 								</div>
 							</a>
 						</div>
