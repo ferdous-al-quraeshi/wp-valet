@@ -357,50 +357,26 @@
     // ============================
 
 
-    // Outstanding Products
-    Redux::setSection($opt_name, array(
-        'title'            => __('Outstanding Products', $opt_name),
-        'desc'             => __('Manage the Outstanding Products section of your pages here!', $opt_name),
-        'icon'             => 'el el-caret-right',
-    ));
+    // Section Titles
 
     Redux::setSection($opt_name, array(
-        'subsection'       => true,
-        'title'            => __('Outstanding Products', $opt_name),
-        'desc'             => __('Manage your Outstanding Products here!', $opt_name),
+        'title'            => __('Section Titles', $opt_name),
+        'desc'             => __('Manage your Section Titles here', $opt_name),
         'icon'             => 'el el-folder-open',
         'fields'           => array(
             array(
                 'id'                => 'op-title',
                 'title'             => __('Outstanding Product Title', $opt_name),
-                'desc'              => __( "Put your Outstanding product\'s title here", $opt_name ),
+                'desc'              => __( "Put your outstanding product's title here", $opt_name ),
                 'type'              => 'text',
                 'default'           => 'Outstanding Products',
             ),
             array(
-                'id'                => 'op-thumb',
-                'title'             => __('Outstanding Product thumb Uploader', $opt_name),
-                'subtitle'          => __('Upload your Outstanding Product thumb here', $opt_name),
-                'desc'              => __( "Just click or drag'n'drop your desired thumb image here", $opt_name ),
-                'type'              => 'media',
-                'compiler'          => true, // in case the thumbnail is not showing
-                'default'           => array(
-                                            'url'=> get_template_directory_uri().'/images/img_large_1.jpg',
-                                       )
-            ),
-            array(
-                'id'                => 'op-header',
-                'title'             => __('Outstanding Product Header', $opt_name),
-                'desc'              => __( "Put your Outstanding product\'s header here", $opt_name ),
+                'id'                => 'awf-title',
+                'title'             => __('Awesome Features Title', $opt_name),
+                'desc'              => __( "Put your awesome Features's title here", $opt_name ),
                 'type'              => 'text',
-                'default'           => 'Web Developer',
-            ),
-            array(
-                'id'                => 'op-desc',
-                'title'             => __('Outstanding Product Description', $opt_name),
-                'desc'              => __( "Put your Outstanding product\'s description here", $opt_name ),
-                'type'              => 'text',
-                'default'           => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.',
+                'default'           => 'Awesome Features',
             ),
         )
     ));
