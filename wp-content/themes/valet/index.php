@@ -12,43 +12,25 @@
 					<div class="row animate-box">
 						<div class="col-md-12 heading text-center"><h2><?php echo $valet['op-title']; ?></h2></div>
 					</div>
+
 					<div class="row">
+						<?php 
+							$outsanding_products = new WP_Query(array(
+								'post_type' => 'valet_op',
+								'posts_per_page' => 4
+							));
+							while($outsanding_products->have_posts()) : $outsanding_products->the_post();
+						?>
 						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
-							<a class="fh5co-card" href="#">
-								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-01" class="img-responsive">
+							<a class="fh5co-card" href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail('op-thumb', ['style' => 'margin: 0 auto', 'class' => 'img-responsive', 'alt' => 'Outstanding Product-01']); ?>
 								<div class="fh5co-card-body">
-									<h3><?php echo $valet['op-header']; ?></h3>
-									<p><?php echo $valet['op-desc']; ?></p>
+									<h3><?php the_title(); ?></h3>
+									<p><?php the_content(); ?></p>
 								</div>
 							</a>
 						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
-							<a class="fh5co-card" href="#">
-								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-02" alt="Free HTML5 Bootstrap template" class="img-responsive">
-								<div class="fh5co-card-body">
-									<h3><?php echo $valet['op-header']; ?></h3>
-									<p><?php echo $valet['op-desc']; ?></p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
-							<a class="fh5co-card" href="#">
-								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-03" alt="Free HTML5 Bootstrap template" class="img-responsive">
-								<div class="fh5co-card-body">
-									<h3><?php echo $valet['op-header']; ?></h3>
-									<p><?php echo $valet['op-desc']; ?></p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
-							<a class="fh5co-card" href="#">
-								<img src="<?php echo $valet['op-thumb']['url']; ?>" alt="Outstanding Product-04" alt="Free HTML5 Bootstrap template" class="img-responsive">
-								<div class="fh5co-card-body">
-									<h3><?php echo $valet['op-header']; ?></h3>
-									<p><?php echo $valet['op-desc']; ?></p>
-								</div>
-							</a>
-						</div>
+						<?php endwhile; ?>
 					</div>
 				</div>
 			</div>
@@ -56,7 +38,7 @@
 			<div class="container">
 				
 				<div class="row text-center" id="fh5co-features">
-					<div class="col-md-12 heading animate-box"><h2>Awesome Features</h2></div>
+					<div class="col-md-12 heading animate-box"><h2><?php echo $valet['awf-title']; ?></h2></div>
 					<div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
 						<div class="fh5co-feature-icon">
 							<i class="ti-mobile"></i>
