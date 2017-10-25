@@ -41,6 +41,38 @@ add_action('after_setup_theme', 'valet_default_functions');
       'supports' => array('title', 'editor', 'thumbnail'),
       'menu_icon' => 'dashicons-editor-insertmore',
     ));
+    register_post_type('valet_fServices', array(
+      'labels' => array(
+        'name' => 'Featured Services',
+        'add_new_item' => 'Add Your Featured Services'
+      ),
+      'public' => true,
+      'supports' => array('title', 'editor', 'thumbnail'),
+      'menu_icon' => 'dashicons-editor-insertmore',
+    ));
+
+
+    add_action('widgets_init', 'valet_sidebars');
+      function valet_sidebars(){
+        register_sidebar(array(
+          'name' => 'Left Sidebar',
+          'id'   => 'leftsidebar',
+          'description' => 'Add stuffs to your left side bar...',
+          'before_widget' => '',
+          'after_widget' => '',
+          'before_title' => '<h3>',
+          'after_title' => '</h3>',
+        ));
+        register_sidebar(array(
+          'name' => 'Customer Says (custom HTML)',
+          'id'   => 'customer_quotes',
+          'description' => 'Add stuffs to your Quotes section...',
+          'before_widget' => '',
+          'after_widget' => '',
+          'before_title' => '<div style="display:none">',
+          'after_title' => '</div>',
+        ));
+      }
   }
 
 // Enqueueing Stylesheets & Scripts
@@ -77,5 +109,5 @@ add_filter("the_content", "read_moreFilter");
   function read_moreFilter($content)
   {
     // Take the existing content and return a subset of it
-    return substr($content, 0, 60);
+    return substr($content, 0, 106);
   }
