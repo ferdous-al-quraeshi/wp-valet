@@ -382,6 +382,33 @@
     ));
 
 
+    // Awesome Features Section
+    Redux::setSection($opt_name, array(
+        'title'            => __('Awesome Features', $opt_name),
+        'desc'             => __('Manage your Awesome Features contents here', $opt_name),
+        'icon'             => 'el el-folder-open',
+        'fields'           => array(
+            array(
+                'id'                => 'awf-icon',
+                'title'             => __('Awesome Features Icon', $opt_name),
+                'desc'              => __( 'Write desired classNames from <a href="https://themify.me/themify-icons" target="_blank">themify-icons</a>', $opt_name ),
+                'type'              => 'multi_text'
+            ),
+            array(
+                'id'                => 'awf-header',
+                'title'             => __('Awesome Features Header', $opt_name),
+                'desc'              => __( "Put your awesome features header here", $opt_name ),
+                'type'              => 'multi_text'
+            ),
+            array(
+                'id'                => 'awf-desc',
+                'title'             => __('Awesome Features Description', $opt_name),
+                'desc'              => __( "Put your awesome Features's description here", $opt_name ),
+                'type'              => 'multi_text'
+            ),
+        )
+    ));
+
     // Redux::setSection( $opt_name, array(
     //     'title'            => __( 'Checkbox', 'redux-framework-demo' ),
     //     'id'               => 'basic-checkbox',
