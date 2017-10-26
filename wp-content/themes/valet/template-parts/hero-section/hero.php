@@ -1,4 +1,4 @@
-<?php global $valet; ?>
+<?php global $valet;?>
 <div id="fh5co-hero" style="background-image: url(<?php echo esc_url(get_template_directory_uri()); ?>/images/slide_2.jpg);">
       <div class="overlay"></div>
       <a href="#fh5co-main" class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></a>

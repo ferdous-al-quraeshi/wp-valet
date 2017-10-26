@@ -1,7 +1,7 @@
 <?php
 	get_header();
 
-	get_template_part('slider');
+	get_template_part('template-parts/hero-section/hero');
 
 ?>
 
