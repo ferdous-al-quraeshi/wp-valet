@@ -1546,11 +1546,15 @@ a > img.fh5co-align-center {
 /* Contact Us */
 section.contact-us {
   float: left;
-  margin: 30px 0;
+  padding: 7em 0;
   width: 100%;
 }
 .contact-us form {
-  padding: 30px 0;
-  width: 75%;
+  width: 92%;
   margin: 0 auto;
+}
+/* WP-CF7 - Custom Styles */
+.wpcf7-text,
+.wpcf7-textarea {
+  width: 100%;
 }
