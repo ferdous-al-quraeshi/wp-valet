@@ -14,7 +14,7 @@
             the_content();?>
         </div>
         <div class="col-md-4">
-          <h3>Need Help?</h3>
+          <h3><?php dynamic_sidebar('right_sidebar'); ?>...</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, harum autem quaerat vitae cupiditate, aspernatur est fugit, commodi optio itaque voluptatum! Beatae quae delectus deserunt est ab in sequi blanditiis!</p>
           <p>
             <a href="#">info@freehtml5.co</a>

@@ -50,29 +50,36 @@ add_action('after_setup_theme', 'valet_default_functions');
       'supports' => array('title', 'editor', 'thumbnail'),
       'menu_icon' => 'dashicons-editor-insertmore',
     ));
+  }
 
+// Custom Widgets
+if(file_exists(dirname(__FILE__).'/inc/widgets/need-help-contact.php')) {
+  require_once(dirname(__FILE__).'/inc/widgets/need-help-contact.php');
+}
 
-    add_action('widgets_init', 'valet_sidebars');
-      function valet_sidebars(){
-        register_sidebar(array(
-          'name' => 'Left Sidebar',
-          'id'   => 'leftsidebar',
-          'description' => 'Add stuffs to your left side bar...',
-          'before_widget' => '',
-          'after_widget' => '',
-          'before_title' => '<h3>',
-          'after_title' => '</h3>',
-        ));
-        register_sidebar(array(
-          'name' => 'Customer Says (custom HTML)',
-          'id'   => 'customer_quotes',
-          'description' => 'Add stuffs to your Quotes section...',
-          'before_widget' => '',
-          'after_widget' => '',
-          'before_title' => '<div style="display:none">',
-          'after_title' => '</div>',
-        ));
-      }
+// Sidebars (Widgets) Resister
+add_action('widgets_init', 'valet_sidebars');
+  function valet_sidebars(){
+    // Right Sidebars
+    register_sidebar(array(
+      'name' => 'Right Sidebar',
+      'id'   => 'right_sidebar',
+      'description' => 'Add stuffs to your right side bars (if any)',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    ));
+    // Customer Says Widget (Custom HTML)
+    register_sidebar(array(
+      'name' => 'Customer Says (custom HTML)',
+      'id'   => 'customer_quotes',
+      'description' => 'Add stuffs to your Quotes section...',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '<div style="display:none">',
+      'after_title' => '</div>',
+    ));
   }
 
 // Enqueueing Stylesheets & Scripts
