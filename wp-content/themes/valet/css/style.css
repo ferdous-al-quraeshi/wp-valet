@@ -1554,6 +1554,9 @@ section.contact-us {
   margin: 0 auto;
 }
 /* WP-CF7 - Custom Styles */
+.wpcf7-form > p {
+  margin-bottom: 30px;
+}
 .wpcf7-text,
 .wpcf7-textarea {
   width: 100%;
