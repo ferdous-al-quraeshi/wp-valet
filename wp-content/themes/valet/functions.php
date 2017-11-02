@@ -1,78 +1,97 @@
 <?php
+// After Setup Theme
 add_action('after_setup_theme', 'valet_default_functions');
   function valet_default_functions() {
     show_admin_bar(false);
-  // All the Includes
-    require_once('lib/redux/ReduxCore/framework.php');
-    require_once('lib/redux/sample/config.php');
-    
-  // Adding Theme Supports
-    add_theme_support('title-tag');
-    add_theme_support('custom-logo');
-    add_theme_support('post-thumbnails');
-    add_image_size( 'op-thumb', 1298, 988, true );
+    // All the Includes
+      // Redux Framework
+      require_once('lib/redux/ReduxCore/framework.php');
+      require_once('lib/redux/sample/config.php');
+
+      // Custom Widgets
+      if(file_exists(dirname(__FILE__).'/inc/widgets/need-help-contact.php')) {
+        require_once(dirname(__FILE__).'/inc/widgets/need-help-contact.php');
+      }
+
+    // Adding Theme Supports
+      add_theme_support('title-tag');
+      add_theme_support('custom-logo');
+      add_theme_support('post-thumbnails');
+      add_image_size( 'op-thumb', 1298, 988, true );
 
     // Menu Register
-    load_theme_textdomain('', get_template_directory_uri().'/languages');
+      load_theme_textdomain('', get_template_directory_uri().'/languages');
     
     if(function_exists(register_nav_menus))
       register_nav_menus(array(
         'header' => __('Header Menu', 'valet'),
-        'footer' => __('Footer Menu', 'valet')
+        'footer' => __('Footer Menu', 'valet') // Currently have NO use
     ));
 
     // Slider (Panel) Resister
-    register_post_type('valet_slider', array(
-      'labels' => array(
-        'name' => 'Hero Slider',
-        'add_new_item' => 'Add New Slider'
-      ),
-      'public' => true,
-      'supports' => array('title', 'thumbnail'),
-      'menu_icon' => 'dashicons-images-alt2',
-      // 'menu_icon' => get_template_directory_uri().'/images/slider-icon.png',
-    ));
-    register_post_type('valet_op', array(
-      'labels' => array(
-        'name' => 'Outstanding Products',
-        'add_new_item' => 'Add New Products'
-      ),
-      'public' => true,
-      'supports' => array('title', 'editor', 'thumbnail'),
-      'menu_icon' => 'dashicons-editor-insertmore',
-    ));
-    register_post_type('valet_fServices', array(
-      'labels' => array(
-        'name' => 'Featured Services',
-        'add_new_item' => 'Add Your Featured Services'
-      ),
-      'public' => true,
-      'supports' => array('title', 'editor', 'thumbnail'),
-      'menu_icon' => 'dashicons-editor-insertmore',
-    ));
+      register_post_type('valet_slider', array(
+        'labels' => array(
+          'name' => 'Hero Slider',
+          'add_new_item' => 'Add New Slider'
+        ),
+        'public' => true,
+        'supports' => array('title', 'thumbnail'),
+        'menu_icon' => 'dashicons-images-alt2',
+        // 'menu_icon' => get_template_directory_uri().'/images/slider-icon.png',
+      ));
+      register_post_type('valet_op', array(
+        'labels' => array(
+          'name' => 'Outstanding Products',
+          'add_new_item' => 'Add New Products'
+        ),
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-editor-insertmore',
+      ));
+      register_post_type('valet_fServices', array(
+        'labels' => array(
+          'name' => 'Featured Services',
+          'add_new_item' => 'Add Your Featured Services'
+        ),
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-editor-insertmore',
+      ));
+  }
 
-
-    add_action('widgets_init', 'valet_sidebars');
-      function valet_sidebars(){
-        register_sidebar(array(
-          'name' => 'Left Sidebar',
-          'id'   => 'leftsidebar',
-          'description' => 'Add stuffs to your left side bar...',
-          'before_widget' => '',
-          'after_widget' => '',
-          'before_title' => '<h3>',
-          'after_title' => '</h3>',
-        ));
-        register_sidebar(array(
-          'name' => 'Customer Says (custom HTML)',
-          'id'   => 'customer_quotes',
-          'description' => 'Add stuffs to your Quotes section...',
-          'before_widget' => '',
-          'after_widget' => '',
-          'before_title' => '<div style="display:none">',
-          'after_title' => '</div>',
-        ));
-      }
+// Sidebars (Widgets) Resister
+add_action('widgets_init', 'valet_sidebars');
+  function valet_sidebars(){
+    // Right Sidebars
+    register_sidebar(array(
+      'name' => 'Right Sidebar',
+      'id'   => 'right_sidebar',
+      'description' => 'Add stuffs to your right side bars (if any)',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    ));
+    // Customer Says Widget (Custom HTML)
+    register_sidebar(array(
+      'name' => 'Customer Says (custom HTML)',
+      'id'   => 'customer_quotes',
+      'description' => 'Add stuffs to your Quotes section...',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '<div style="display:none">',
+      'after_title' => '</div>',
+    ));
+    // Footer Widgets (Custom HTML)
+    register_sidebar(array(
+      'name' => 'Footer Columns',
+      'id'   => 'footer_columns',
+      'description' => 'Add stuffs to your Footer section...',
+      'before_widget' => '<div class="col-md-4 col-sm-6 footer-box">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="fh5co-footer-heading">',
+      'after_title' => '</h3>',
+    ));
   }
 
 // Enqueueing Stylesheets & Scripts

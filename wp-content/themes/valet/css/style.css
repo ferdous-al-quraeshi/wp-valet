@@ -1544,21 +1544,20 @@ a > img.fh5co-align-center {
 
 
 /* Contact Us */
-<<<<<<< HEAD
-.contact-container {
-=======
 section.contact-us {
->>>>>>> 14f3a3c2c39fb1be7cf5ca369cf56587a6151d0d
   float: left;
-  margin: 30px 0;
+  padding: 7em 0;
   width: 100%;
 }
-<<<<<<< HEAD
-.contact-us {
-=======
 .contact-us form {
->>>>>>> 14f3a3c2c39fb1be7cf5ca369cf56587a6151d0d
-  padding: 30px 0;
-  width: 75%;
+  width: 92%;
   margin: 0 auto;
+}
+/* WP-CF7 - Custom Styles */
+.wpcf7-form > p {
+  margin-bottom: 30px;
+}
+.wpcf7-text,
+.wpcf7-textarea {
+  width: 100%;
 }
