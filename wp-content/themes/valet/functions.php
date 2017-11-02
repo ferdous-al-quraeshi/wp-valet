@@ -25,7 +25,7 @@ add_action('after_setup_theme', 'valet_default_functions');
     if(function_exists(register_nav_menus))
       register_nav_menus(array(
         'header' => __('Header Menu', 'valet'),
-        'footer' => __('Footer Menu', 'valet')
+        'footer' => __('Footer Menu', 'valet') // Currently have NO use
     ));
 
     // Slider (Panel) Resister
